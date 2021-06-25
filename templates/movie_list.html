@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+ <section id="cards">
+            <div class="container-fluid ">
+                
+                <!-- cards -->
+                <div class="row">
+                  
+                  {% for movie in movies %}
+                    
+                        <div class="col-md-4 col-md-4 mb-4 pt-5">
+                            <div class="card shadow-sm border-0">
+                                <div id="card-dark" class="card-body">
+                                    <div class="user-picture">
+                                        <img src="{{url_for('static', filename='img.jpeg')}}" 
+                                        style="object-fit: contain; width:100px; height:120px; "  class="shadow-sm rounded img-thumbnail"  />
+                                    </div>
+                                    <div class="user-content">
+                                        <h5 class="text-capitalize user-name">{{ movie.title }}</h5>
+
+                                        <p class="small text-muted mb-0"> Description </p>
+                                        <a href="/movies/{{ movie.movie_id }}" class="btn btn-primary">Check</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}   
+
+                </div>
+
+            </div>
+
+            <!-- /cards -->
+        </section>
+
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+  
+
+{% endblock %}

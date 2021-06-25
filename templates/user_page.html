@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="card card-image" style="background-image: url( {{ url_for ('static', filename='back.jpg') }})">
+
+<div class="text-white text-center rgba-stylish-strong py-5 px-4">
+        <div class="py-5">
+
+          <!-- Content -->
+          <h5 class="h5 orange-text"><i class="fa fa-camera-retro"></i> Profile</h5>
+          <h2 class="card-title h2 my-4 py-2">User {{user.user_id}}</h2>
+
+
+            {% if user.age %}
+                <p class="mb-4 pb-2 px-md-5 mx-md-5">Age: {{user.age}}</p>
+                {% endif %}
+
+                {% if user.zipcode %}
+                <p class="mb-4 pb-2 px-md-5 mx-md-5">Zipcode: {{user.zipcode}}</p>
+            {% endif %}
+
+              {% if not com_id %}
+                <h5 class="h5 orange-text">We dectecting community for you, wait for sometime</h5>
+                <h5>Rate some movies for now</h5>
+                <a href="/movies">movies </a>
+                {% else %}
+                <h5 class="h5 orange-text">You belong to community {{com_id}}</h5>
+                {% endif %}
+
+
+
+                <!--  {% if ratings_list %}
+                <h2>Ratings</h2>
+                    <ul>
+                        {% for rating in ratings_list %}
+                        <li><a href="{{ rating[2] }}">{{ rating[1] }}</a>: {{ rating[0] }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %} -->
+            
+            <table class="table table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Ratings</th>
+                  
+                </tr>
+              </thead>
+              
+            <tbody>
+
+            </div>
+                {% for rating in ratings_list %}
+
+                    <tr>
+                          
+                          <td><a href="{{ rating[2] }}">{{ rating[1] }}</a></td>
+                          <td><a href="{{ rating[2] }}">{{ rating[0] }}</a></td>
+    
+                          
+                    </tr>
+
+                
+                {% endfor %}
+              </tbody>
+              </table>
+              </div>
+            </div>       
+              <h3> Recomendations for you</h3>
+                {% for i in sim_movie %}
+                    {% for j in i %}
+                    <tr>
+                          
+                      <td><a href="/movies/{{ j }}">{{ j }}</a></td>
+                      
+                </tr>
+                {% endfor %}
+                {% endfor %}
+                      
+           
+           
+
+   
+
+
+
+
+   
+
+  
+    
+{% endblock %}
+
+
+
+

@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+
+<div class="container">
+    <div class="row py-5 mt-4 align-items-center">
+        
+        <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+            <img src="https://res.cloudinary.com/mhmd/image/upload/v1569543678/form_d9sh6m.svg" alt="" class="img-fluid mb-3 d-none d-md-block">
+            <h1 style="text-align: center;">Create an Account</h1>
+            
+        </div>
+
+        <!-- Registeration Form -->
+        <div class="col-md-7 col-lg-6 ml-auto">
+            <form action="/register" method="POST">
+                <div class="row">
+
+                    
+
+                    <!-- Email Address -->
+                    <div class="input-group col-lg-12 mb-4">
+                        
+                        <input id="email" type="email" name="email" placeholder="Email Address" class="form-control bg-white border-left-0 border-md">
+                    </div>
+
+
+                    <!-- Password -->
+                    <div class="input-group col-lg-6 mb-4">
+                        
+                        <input id="password" type="password" name="password" placeholder="Password" class="form-control bg-white border-left-0 border-md">
+                    </div>
+
+
+
+                    <!-- age -->
+                    <div class="input-group col-lg-12 mb-4">                        
+                        <input id="age" type="number" name="age" placeholder="Your age" class="form-control bg-white border-md border-left-0 pl-3">
+                    </div>
+
+
+                    <!-- zipcode -->
+                    <div class="input-group col-lg-12 mb-4">                        
+                        <input id="zipcode" type="number" name="zipcode" placeholder="Pincode" class="form-control bg-white border-md border-left-0 pl-3">
+                    </div>
+
+
+
+                   
+
+                    <!-- Submit Button -->
+                    <div class="form-group col-lg-12 mb-4">
+                        <input type="Submit" name="register" value="Register" class="form-control text-light bg-dark border-md border-left-0 pl-3">
+                        
+                    </div>
+
+                   
+
+                    <!-- Already Registered -->
+                    <div class="text-center w-100">
+                        <p class="text-muted font-weight-bold">Already Registered? <a href="/login" class="text-primary ml-2">Login</a></p>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

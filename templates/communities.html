@@ -1,0 +1,41 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+{%for i,j in communities.items() %}
+
+
+<div class="card text-center">
+  <div class="card-header">
+   <h4>Community Id: {{i}}</h4>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Users</h5>
+    <p class="card-text">
+
+    	{% for k in j['members'] %}
+         <button class="u_button"><a href="/users/{{k}}">{{ k }}  </a></button>
+         {% endfor %}</p> 
+         <h3>Popular Movies in the communitie</h3>
+    	{% for k in j['movies'] %}
+      <button class="u_button"><a href="/movies/{{k}}">{{ k }}  </a></button>
+      {% endfor %}</p>
+  </div>
+  <div>
+    
+
+  </div>
+  
+</div>
+
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+	
+
+    
+{% endfor %}   
+
+{% endblock %}
+
+
+
