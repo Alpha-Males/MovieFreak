@@ -76,8 +76,7 @@ class Rating(db.Model):
 def connect_to_db(app):
     """Connect the database to our Flask app."""
     # Configure to use our PstgreSQL database
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://zbfhpwgsjwubjl:850bc0bef65f5bc4c0548260d27ca7e8b981fb4bb4443e97664a3518d7525bec@ec2-174-129-225-160.compute-1.amazonaws.com:5432/dd9khsdjc7bnt1'
-    #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost/ratings'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost/ratings'
     db.app = app
     db.init_app(app)
 
